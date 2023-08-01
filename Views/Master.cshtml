@@ -13,6 +13,30 @@
 		<link rel="stylesheet" href="/css/main.css" />
 	</head>
 	<body>
-		@RenderBody()
+		<div id="header">
+			<div id="logo">
+				<a href="/"><strong>UPDATE</strong></a>
+			</div>
+			<nav class ="navbar navbar-expand navbar-light">
+				@{
+					var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+					.Children()
+					.Where(x => x.IsVisible());
+				}
+				<ul>
+					@foreach (var item in selection)
+					{
+						<li>
+							<a href="@item.Url()">@item.Name()</a>
+						</li>
+					}
+				</ul>
+			</nav>
+		</div>
+		<div id="content">
+			@RenderBody()
+		</div>
+		<div id="footer">
+		</div>
 	</body>	
 </html>

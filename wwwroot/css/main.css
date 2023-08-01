@@ -1,4 +1,38 @@
 body {
-    
+    min-height: 100vh;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color:#293e31;
 }
-        
+
+#header, #footer, #content {
+    padding: 10px;
+}
+
+#header, #footer {
+    background-color: #293e31;
+}
+
+#header {
+    height: 10vh;    
+}
+
+#logo {
+    float: left;
+    height: 100%;
+    padding: 0 5px;
+    font-size: 10vw;
+    color: #293e31;
+    background-color: #fe8340;
+}
+
+.navbar {
+    float: right;
+}
+
+.navbar a {
+    color: #fe8340;
+}
+
+#footer {
+    height: 5vh;
+}
