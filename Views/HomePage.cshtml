@@ -5,6 +5,11 @@
     Layout = "Master.cshtml";    
 }
 
+@if (Model.HasValue("heading"))
+{
+    <h1>@(Model.Value("heading"))</h1>
+}
+
 @if (Model.HasValue("introText"))
 {
     <p>@(Model.Value("introText"))</p>

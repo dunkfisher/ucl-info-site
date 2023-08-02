@@ -4,8 +4,20 @@ body {
     color:#293e31;
 }
 
+h1 {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 0.4em;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 0.4em;
+}
+
 #header, #footer, #content {
-    padding: 10px;
+    padding: 12px;
 }
 
 #header, #footer {
@@ -13,16 +25,16 @@ body {
 }
 
 #header {
-    height: 10vh;    
+    height: 62px;
 }
 
 #logo {
-    float: left;
     height: 100%;
     padding: 0 5px;
-    font-size: 10vw;
+    font-size: 2.1em;
     color: #293e31;
     background-color: #fe8340;
+    float: left;
 }
 
 .navbar {
@@ -34,5 +46,92 @@ body {
 }
 
 #footer {
-    height: 5vh;
+    height: 42px;
+}
+
+#burger-input {
+    display: none;
+}
+
+#burger-menu {
+    width: 50px;
+    height: 100%;
+    background: linear-gradient( to bottom, #fe8340, #fe8340 20%, #293e31 20%, #293e31 40%, #fe8340 40%, #fe8340 60%, #293e31 60%, #293e31 80%, #fe8340 80%, #fe8340 100% );
+    float: right;
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;    
+    opacity: 0;
+    transition: opacity .35s, visibility .35s, height .35s;
+    background-color: #293e31;
+    z-index: -1;
+    visibility: hidden;
+}
+
+#burger-menu #sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -80vw;
+    width: 80vw;
+    height: 100%;
+    padding: 10px;
+    background-color: #293e31;
+    transition: 0.3s;
+    box-sizing: border-box;
+    visibility: hidden;
+}
+
+#burger-menu h2,
+#burger-menu a {
+    color: #fe8340;
+}
+
+#burger-menu li {
+    margin-bottom: 0.5em;
+}
+
+#burger-input:checked + #burger-menu #sidebar-menu {
+    left: 0;
+    visibility: visible;
+}
+
+#burger-input:checked ~ .overlay {
+    opacity: 0.4;
+    visibility: visible;
+}
+
+#main-menu {
+    /*height: 100px;
+    width: 100%;    
+    margin: 0px;
+    z-index: 9;
+    display: block;*/
+}
+
+#main-menu ul {
+    /*max-width: 800px;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 9;*/
+}
+
+@media screen and (max-width: 750px) {
+    #main-menu {
+        display: none;
+    }
+
+    #burger-menu {
+        display: inline;
+    }
 }

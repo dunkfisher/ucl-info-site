@@ -17,21 +17,17 @@
 			<div id="logo">
 				<a href="/"><strong>UPDATE</strong></a>
 			</div>
-			<nav class ="navbar navbar-expand navbar-light">
-				@{
-					var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-					.Children()
-					.Where(x => x.IsVisible());
-				}
-				<ul>
-					@foreach (var item in selection)
-					{
-						<li>
-							<a href="@item.Url()">@item.Name()</a>
-						</li>
-					}
-				</ul>
+			<nav id="main-menu">
+				<partial name="_NavMenu" />
 			</nav>
+			<input type="checkbox" id="burger-input" class="burger-shower" />
+			<label id="burger-menu" for="burger-input">
+				<nav id="sidebar-menu">
+					<h2>Menu</h2>
+					<partial name="_NavMenu" />
+				</nav>
+			</label>
+			<div class="overlay"></div>
 		</div>
 		<div id="content">
 			@RenderBody()
