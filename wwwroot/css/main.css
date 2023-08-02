@@ -16,6 +16,17 @@ h2 {
     margin-bottom: 0.4em;
 }
 
+p {
+    margin-bottom: 0.4em;
+}
+
+#wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    border-left: 1px dashed #84ae94;
+    border-right: 1px dashed #84ae94;
+}
+
 #header, #footer, #content {
     padding: 12px;
 }
@@ -37,12 +48,14 @@ h2 {
     float: left;
 }
 
-.navbar {
-    float: right;
+nav a,
+nav h2,
+#footer {
+    color: #fe8340;
 }
 
-.navbar a {
-    color: #fe8340;
+nav a {
+    font-size: 1.2em;
 }
 
 #footer {
@@ -58,7 +71,7 @@ h2 {
     height: 100%;
     background: linear-gradient( to bottom, #fe8340, #fe8340 20%, #293e31 20%, #293e31 40%, #fe8340 40%, #fe8340 60%, #293e31 60%, #293e31 80%, #fe8340 80%, #fe8340 100% );
     float: right;
-    display: none;
+    display: inline;
 }
 
 .overlay {
@@ -81,15 +94,10 @@ h2 {
     width: 80vw;
     height: 100%;
     padding: 10px;
+    border-right: 1px solid #fe8340;
     background-color: #293e31;
     transition: 0.3s;
-    box-sizing: border-box;
     visibility: hidden;
-}
-
-#burger-menu h2,
-#burger-menu a {
-    color: #fe8340;
 }
 
 #burger-menu li {
@@ -107,31 +115,41 @@ h2 {
 }
 
 #main-menu {
-    /*height: 100px;
-    width: 100%;    
-    margin: 0px;
-    z-index: 9;
-    display: block;*/
+    float: right;
+    display: none;
 }
 
-#main-menu ul {
-    /*max-width: 800px;
+#main-menu ul {    
     width: 100%;
     height: 100%;
-    margin: 0px auto;
-    padding: 0px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    z-index: 9;*/
 }
 
-@media screen and (max-width: 750px) {
+#main-menu li {
+    padding: 0 10px;
+}
+
+#main-menu a:hover {
+    color: #fe9c66;
+}
+
+#content {
+    min-height: 50vh;
+}
+
+#footer span {
+    font-size: 0.8em;
+    float: right;
+}
+
+@media screen and (min-width: 750px) {
     #main-menu {
-        display: none;
+        display: block;
     }
 
     #burger-menu {
-        display: inline;
+        display: none;
     }
 }

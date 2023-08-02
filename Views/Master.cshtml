@@ -1,38 +1,48 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-	Layout = null;
+    Layout = null;
 }
 
 <html lang="en-us">
-	<head>
-		<title>UCL Non-UPF Information</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="/css/reset.css" />
-		<link rel="stylesheet" href="/css/main.css" />
-	</head>
-	<body>
-		<div id="header">
-			<div id="logo">
-				<a href="/"><strong>UPDATE</strong></a>
-			</div>
-			<nav id="main-menu">
-				<partial name="_NavMenu" />
-			</nav>
-			<input type="checkbox" id="burger-input" class="burger-shower" />
-			<label id="burger-menu" for="burger-input">
-				<nav id="sidebar-menu">
-					<h2>Menu</h2>
-					<partial name="_NavMenu" />
-				</nav>
-			</label>
-			<div class="overlay"></div>
-		</div>
-		<div id="content">
-			@RenderBody()
-		</div>
-		<div id="footer">
-		</div>
-	</body>	
+<head>
+    <title>UCL Non-UPF Information</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="logo">
+                <a href="/"><strong>UPDATE</strong></a>
+            </div>
+            <nav id="main-menu">
+                <partial name="_NavMenu" />
+            </nav>
+            <input type="checkbox" id="burger-input" class="burger-shower" />
+            <label id="burger-menu" for="burger-input">
+                <nav id="sidebar-menu">
+                    <h2>Menu</h2>
+                    <partial name="_NavMenu" />
+                </nav>
+            </label>
+            <div class="overlay"></div>
+        </div>
+        <div id="content">
+            @RenderBody()
+        </div>
+        <div id="footer">
+            @{
+                var homePage = Umbraco.ContentAtRoot().FirstOrDefault();
+            }
+
+            @if (homePage != null && homePage.HasValue("footerText"))
+            {
+                <span>@(homePage.Value("footerText"))</span>
+            }            
+        </div>
+    </div>
+</body>
 </html>
