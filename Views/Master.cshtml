@@ -16,18 +16,22 @@
     <div id="wrapper">
         <div id="header">
             <div id="logo">
-                <a href="/"><strong>UPDATE</strong></a>
+                <a href="/">
+                    <img src="/images/UPDATE Logo.png" alt="UPDATE project logo" />
+                </a>
             </div>
             <nav id="main-menu">
                 <partial name="_NavMenu" />
             </nav>
-            <input type="checkbox" id="burger-input" class="burger-shower" />
-            <label id="burger-menu" for="burger-input">
-                <nav id="sidebar-menu">
-                    <h2>Menu</h2>
-                    <partial name="_NavMenu" />
-                </nav>
-            </label>
+            <div id="burger-wrapper">
+                <input type="checkbox" id="burger-input" class="burger-shower" />
+                <label id="burger-menu" for="burger-input">
+                    <nav id="sidebar-menu">
+                        <h2>Menu</h2>
+                        <partial name="_NavMenu" />
+                    </nav>
+                </label>
+            </div>
             <div class="overlay"></div>
         </div>
         <div id="content">

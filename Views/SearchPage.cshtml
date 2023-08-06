@@ -1,8 +1,7 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-    Layout = "Master.cshtml";    
+	Layout = "Master.cshtml";
 }
 
 @if (Model.HasValue("heading"))
@@ -14,3 +13,5 @@
 {
     <p>@(Model.Value("mainText"))</p>
 }
+
+<strong>PAGE UNDER CONSTRUCTION</strong>
