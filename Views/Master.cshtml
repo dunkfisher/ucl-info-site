@@ -41,10 +41,17 @@
             @{
                 var homePage = Umbraco.ContentAtRoot().FirstOrDefault();
             }
-
-            @if (homePage != null && homePage.HasValue("footerText"))
+            @if (homePage != null && homePage.HasValue("footerImage"))
             {
-                <span>@(homePage.Value("footerText"))</span>
+                var footerImage = homePage.Value<IPublishedContent>("footerImage");
+                if (footerImage != null)
+                {
+                    var imgUrl = homePage.HasValue("footerImageUrl") ? homePage.Value("footerImageUrl") : "/";
+                    var image = @Umbraco.Media(footerImage.Key);
+                    <a id="footer-image" href="@imgUrl" target="_blank">
+                        <img src="@image.Url()" alt="" />
+                    </a>
+                }
             }            
         </div>
     </div>

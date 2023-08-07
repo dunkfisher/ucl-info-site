@@ -34,7 +34,7 @@ li {
     border: 1px solid #1d7151;
 }
 
-#content, #footer {
+#content {
     padding: 12px;
 }
 
@@ -71,11 +71,6 @@ nav h2,
 
 nav a {
     font-size: 1.2em;
-}
-
-#footer {
-    height: 52px;
-    border-top: 1px solid #1d7151;
 }
 
 #burger-wrapper {
@@ -160,9 +155,15 @@ nav a {
     min-height: 50vh;
 }
 
-#footer span {
-    font-size: 0.8em;
+#footer {
+    height: 56px;
+    padding: 8px 12px;
+    border-top: 1px solid #1d7151;
+}
+
+#footer-image {
     float: right;
+    height: 100%;
 }
 
 @media screen and (min-width: 750px) {
