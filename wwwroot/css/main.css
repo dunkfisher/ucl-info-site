@@ -172,6 +172,15 @@ nav a {
     height: 100%;
 }
 
+/* Map page */
+#map-page-body .image-map {
+    margin-top: 10px;
+}
+
+#uclh-map {
+    border: 1px solid #4c4e52;
+}
+
 @media screen and (min-width: 800px) {
     #main-menu {
         display: block;
@@ -180,4 +189,26 @@ nav a {
     #burger-menu {
         display: none;
     }
+
+    /* Map page */
+    #map-page-body .image-map {
+        margin-top: 0;
+    }
+
+    #uclh-map {
+        float: left;
+        width: 44%;
+        margin-right: 2%;
+    }
+
+    #text-wrapper, #uclh-map-key {
+        float: right;
+        width: 54%;
+    }    
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
