@@ -34,7 +34,7 @@ li {
     border: 1px solid #1d7151;
 }
 
-#content {
+#main-menu, #content {
     padding: 12px;
 }
 
@@ -131,16 +131,18 @@ nav a {
 }
 
 #main-menu {
-    float: right;
+    height: 42px;
+    font-size: 0.8em;
+    border-bottom: 1px solid #1d7151;
+    background: transparent url(../images/cutlery.png) no-repeat left center;
+    background-size: 50px;
     display: none;
 }
 
 #main-menu ul {    
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: center;    
 }
 
 #main-menu li {
@@ -148,11 +150,15 @@ nav a {
 }
 
 #main-menu a:hover {
-    color: #fe9c66;
+    color: #2cab7a;        
 }
 
 #content {
     min-height: 50vh;
+}
+
+#content a {
+    color: #2cab7a;
 }
 
 #footer {
@@ -166,7 +172,7 @@ nav a {
     height: 100%;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 800px) {
     #main-menu {
         display: block;
     }
