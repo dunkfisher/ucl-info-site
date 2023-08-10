@@ -159,6 +159,7 @@ nav a {
 
 #content {
     min-height: 50vh;
+    padding-bottom: 60px;
 }
 
 #content a {
