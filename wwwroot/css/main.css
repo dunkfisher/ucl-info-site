@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
 body {
     min-height: 100vh;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #4c4e52;
 }
 
 h1 {
     font-size: 1.6em;
     font-weight: bold;
-    margin-bottom: 0.4em;
+    text-align: center;
+    margin-bottom: 0.6em;
 }
 
 h2 {
@@ -38,8 +41,8 @@ li {
     padding: 12px;
 }
 
-#header, #footer {        
-    background-color: #96ceb4;
+#header, #footer {
+    background-color: #1d7151;
 }
 
 #header {
@@ -49,9 +52,7 @@ li {
 }
 
 #logo {
-    height: 100%;        
-    color: #1d7151;
-    background-color: #96ceb4;
+    height: 100%;
     float: left;
 }
 
@@ -66,7 +67,7 @@ nav li {
 nav a,
 nav h2,
 #footer {
-    color: #1d7151;
+    color: #96ceb4;
 }
 
 nav a {
@@ -86,7 +87,7 @@ nav a {
 #burger-menu {
     width: 50px;
     height: 100%;
-    background: linear-gradient( to bottom, #1d7151, #1d7151 20%, #96ceb4 20%, #96ceb4 40%, #1d7151 40%, #1d7151 60%, #96ceb4 60%, #96ceb4 80%, #1d7151 80%, #1d7151 100% );    
+    background: linear-gradient( to bottom, #96ceb4, #96ceb4 20%, #1d7151 20%, #1d7151 40%, #96ceb4 40%, #96ceb4 60%, #1d7151 60%, #1d7151 80%, #96ceb4 80%, #96ceb4 100% );
     display: inline-block;
 }
 
@@ -98,7 +99,7 @@ nav a {
     height: 100%;
     opacity: 0;
     transition: opacity .35s, visibility .35s, height .35s;
-    background-color: #96ceb4;
+    background-color: #1d7151;
     z-index: -1;
     visibility: hidden;
 }
@@ -110,8 +111,8 @@ nav a {
     width: 80vw;
     height: 100%;
     padding: 10px;
-    border-right: 1px solid #1d7151;
-    background-color: #96ceb4;
+    border-right: 1px solid #96ceb4;
+    background-color: #1d7151;
     transition: 0.3s;
     visibility: hidden;
 }
@@ -130,9 +131,7 @@ nav a {
     visibility: visible;
 }
 
-#main-menu {
-    height: 42px;
-    font-size: 0.8em;
+#main-menu {        
     border-bottom: 1px solid #1d7151;
     background: transparent url(../images/cutlery.png) no-repeat left center;
     background-size: 50px;
@@ -149,8 +148,13 @@ nav a {
     padding: 0 10px;
 }
 
+#main-menu a {
+    font-size: 1em;
+    color: #1d7151;
+}
+
 #main-menu a:hover {
-    color: #2cab7a;        
+    color: #2cab7a;
 }
 
 #content {
@@ -179,6 +183,10 @@ nav a {
 
 #uclh-map {
     border: 1px solid #4c4e52;
+}
+
+#text-wrapper p:first-child {
+    margin: 0; /* Prevent extra space with empty paragraph */
 }
 
 @media screen and (min-width: 800px) {

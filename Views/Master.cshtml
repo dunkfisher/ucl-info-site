@@ -43,13 +43,14 @@
             }
             @if (homePage != null && homePage.HasValue("footerImage"))
             {
+                var altText = homePage.HasValue("footerImageAltText") ? homePage.Value("footerImageAltText") : string.Empty;
                 var footerImage = homePage.Value<IPublishedContent>("footerImage");
                 if (footerImage != null)
                 {
                     var imgUrl = homePage.HasValue("footerImageUrl") ? homePage.Value("footerImageUrl") : "/";
                     var image = @Umbraco.Media(footerImage.Key);
                     <a id="footer-image" href="@imgUrl" target="_blank">
-                        <img src="@image.Url()" alt="" />
+                        <img src="@image.Url()" alt="@altText" />
                     </a>
                 }
             }            
