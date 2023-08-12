@@ -190,6 +190,15 @@ nav a {
     margin: 0; /* Prevent extra space with empty paragraph */
 }
 
+/* Outlet page */
+.food-card {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    background-color: #96ceb4;
+}
+
 @media screen and (min-width: 800px) {
     #main-menu {
         display: block;
