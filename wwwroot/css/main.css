@@ -131,40 +131,40 @@ nav a {
     visibility: visible;
 }
 
-#main-menu {        
+#main-menu {
     border-bottom: 1px solid #1d7151;
     background: transparent url(../images/cutlery.png) no-repeat left center;
     background-size: 50px;
     display: none;
 }
 
-#main-menu ul {    
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;    
-}
+    #main-menu ul {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 
-#main-menu li {
-    padding: 0 10px;
-}
+    #main-menu li {
+        padding: 0 10px;
+    }
 
-#main-menu a {
-    font-size: 1em;
-    color: #1d7151;
-}
+    #main-menu a {
+        font-size: 1em;
+        color: #1d7151;
+    }
 
-#main-menu a:hover {
-    color: #2cab7a;
-}
+        #main-menu a:hover {
+            color: #2cab7a;
+        }
 
 #content {
     min-height: 50vh;
     padding-bottom: 60px;
 }
 
-#content a {
-    color: #2cab7a;
-}
+    #content a {
+        color: #2cab7a;
+    }
 
 #footer {
     height: 56px;
@@ -188,6 +188,42 @@ nav a {
 
 #text-wrapper p:first-child {
     margin: 0; /* Prevent extra space with empty paragraph */
+}
+
+#outlets-list {
+    list-style: none;
+    counter-reset: outlet-counter;
+    max-height: 220px;
+    padding: 10px;
+    background-color: #aea59b;
+}
+
+#outlets-list li {
+    float: left;
+    width: 40%;
+    counter-increment: outlet-counter;
+}
+
+#outlets-list li::before {
+    content: counter(outlet-counter);
+    color: black;
+    /*background-color: white;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 999px;
+    text-align: center;
+    float: left;
+    position: absolute;
+    left: -26px;*/
+}
+
+#outlets-list a {
+    color: white;
+}
+
+#outlets-list a:hover {
+    text-decoration: underline;
 }
 
 /* Outlet page */
@@ -219,10 +255,10 @@ nav a {
         margin-right: 2%;
     }
 
-    #text-wrapper, #uclh-map-key {
+    #text-wrapper, #outlets-list {
         float: right;
         width: 54%;
-    }    
+    }
 }
 
 .clearfix::after {
