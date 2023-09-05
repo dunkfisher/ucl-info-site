@@ -7,10 +7,10 @@ namespace Upf_Info_Site.Models
 		public FoodListingViewModel(IPublishedContent content, IPublishedValueFallback publishedValueFallback) : base(content, publishedValueFallback)
 		{
 			Heading = content.Name;
-			GroupedListings = new Dictionary<string, string[]>();
+			GroupedListings = new Dictionary<string, IEnumerable<string>>();
 		}
      
         public string Heading { get; set; }
-        public Dictionary<string, string[]> GroupedListings { get; set; }
+        public Dictionary<string, IEnumerable<string>> GroupedListings { get; set; }
     }
 }

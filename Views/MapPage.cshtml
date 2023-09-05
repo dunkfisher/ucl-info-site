@@ -50,10 +50,10 @@
     <ol id="outlets-list" class="clearfix">
         @{
             var outlets = Umbraco.ContentAtXPath("//outlet");
-            foreach (var outlet in outlets)
+            foreach (Outlet outlet in outlets)
             {
                 <li>
-                    <a href="@outlet.Url()" target="_blank">@outlet.Name</a>
+                    <a href="@outlet.Url()">@outlet.Name</a>
                 </li>
             }
         }

@@ -14,9 +14,6 @@ namespace Upf_Info_Site
         private readonly IVariationContextAccessor _variationContextAccessor;
 		private readonly ServiceContext _serviceContext;
 
-		private readonly string[] _mealTypeAliases = { "breakfast", "lunch", "dinner", "snack" };
-        private readonly string[] _foodTypeAliases = { "bread", "cereal", "drinks", "lunches", "readyMeals", "saucesDipsEtc", "snacks", "soup", "treats" };
-
         public OutletController(ILogger<OutletController> logger, ICompositeViewEngine compositeViewEngine, IUmbracoContextAccessor umbracoContextAccessor, IVariationContextAccessor variationContextAccessor, ServiceContext context)
 			: base(logger, compositeViewEngine, umbracoContextAccessor)
 		{
@@ -31,21 +28,10 @@ namespace Upf_Info_Site
 
             string[] typeAliases;
             var currentPage = (Outlet)CurrentPage;
-            if (currentPage.IsRetail)
+            foreach (var blockItem in currentPage.ProductList)
             {
-                typeAliases = _foodTypeAliases;
-            }
-            else
-            {
-                typeAliases = _mealTypeAliases;
-            }
-
-            foreach (var type in typeAliases)
-            {
-                if (CurrentPage.HasValue(type))
-                {
-                    foodListingVm.GroupedListings.Add(type, CurrentPage.Value<string[]>(type));
-                }
+                var productGroup = (ProductGroup)blockItem.Content;
+                foodListingVm.GroupedListings.Add(productGroup.Heading, productGroup.Products);
             }
 
             return CurrentTemplate(foodListingVm);
