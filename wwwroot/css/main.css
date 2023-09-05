@@ -190,34 +190,44 @@ nav a {
     margin: 0; /* Prevent extra space with empty paragraph */
 }
 
+#outlets-list li::before {
+    content: counter(outlet-counter);
+    color: black;
+}
+
 #outlets-list {
     list-style: none;
-    counter-reset: outlet-counter;
-    max-height: 220px;
+    display: block;
     margin-top: 10px;
-    padding: 10px;
+    padding: 20px;
+    counter-reset: outlet-counter;
     border: 1px solid black;
     background-color: #aea59b;
 }
 
 #outlets-list li {
-    float: left;
     width: 40%;
-    counter-increment: outlet-counter;
+    margin-right: 20px;
+    float: left;
+    position: relative
 }
 
-#outlets-list li::before {
+#outlets-list li:before {
+    counter-increment: outlet-counter;
     content: counter(outlet-counter);
-    color: black;
-    /*background-color: white;
+    float: left;
+    position: absolute;
+    top: 3px;
+    left: -26px;
     width: 18px;
     height: 18px;
     line-height: 18px;
-    border-radius: 999px;
     text-align: center;
-    float: left;
-    position: absolute;
-    left: -26px;*/
+    font-size: 0.7em;
+    font-weight: bold;
+    background: white;
+    -moz-border-radius: 999px;
+    border-radius: 999px
 }
 
 #outlets-list a {
