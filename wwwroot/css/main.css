@@ -19,6 +19,12 @@ h2 {
     margin-bottom: 0.4em;
 }
 
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+}
+
 p {
     margin-bottom: 0.6em;
 }
@@ -245,6 +251,17 @@ nav a {
     border-radius: 15px;
     color: white;
     background-color: #96ceb4;
+}
+
+h3.card-header {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.card-body {
+    overflow: hidden;
+    margin-top: 0.4em;
+    display: none;    
 }
 
 @media screen and (min-width: 800px) {

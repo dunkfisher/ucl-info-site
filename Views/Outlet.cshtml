@@ -5,12 +5,14 @@
 
 <h1>@(Model.Heading)</h1>
 @foreach (var foodGrouping in Model.GroupedListings)
-{
+{	
 	<div class="food-card">
-		<h2>@foodGrouping.Key.ToUpper()</h2>
-		@foreach (var food in foodGrouping.Value)
-		{
-			@food<br />
-		}
+		<h3 class="card-header">@foodGrouping.Key.ToUpper()</h3>
+		<div class="card-body">
+			@foreach (var food in foodGrouping.Value)
+			{
+				@food<br />
+			}
+		</div>		
 	</div>
 }
