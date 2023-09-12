@@ -1,7 +1,11 @@
 ﻿@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.SearchPage>
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
+
+    var outlets = Umbraco.ContentAtRoot()
+        .First()
+        .Descendants<Outlet>();
 }
 
 @if (Model.HasValue("heading"))
@@ -14,4 +18,31 @@
     <p>@(Model.Value("mainText"))</p>
 }
 
-<strong>PAGE UNDER CONSTRUCTION</strong>
+<div id="search-by-outlet">
+    <h2>Search by</h2>
+    <div class="search-category">
+        <h3>Outlet</h3>
+        @foreach (var outlet in outlets.Where(x => !x.IsRetail))
+        {
+            <a class="search-trigger">@outlet.Name</a>
+        }
+    </div>
+
+    <div class="search-category">
+        <h3>Store</h3>
+        @foreach (var outlet in outlets.Where(x => x.IsRetail))
+        {
+            <a class="search-trigger">@outlet.Name</a>
+        }
+    </div>
+</div>
+
+<div id="search-by-type">
+    <h2>Search by type</h2>
+    @foreach (var group in outlets.SelectMany(x => x.ProductList.Select(y => ((ProductGroup)y.Content).Heading))
+    .Distinct()
+    .Order())
+    {
+        <a class="search-trigger">@group</a>
+    }
+</div>
