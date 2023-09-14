@@ -249,7 +249,7 @@ nav a {
     margin-top: 24px;
 }
 
-.search-category {    
+.search-category {
     padding: 12px;
     border: 1px solid #1d7151;
 }
@@ -262,7 +262,7 @@ a.search-trigger {
     margin: 6px 0;
     padding: 12px;
     text-align: center;
-    border: 3px solid #1d7151;    
+    border: 3px solid #1d7151;
     background-color: #96ceb4;
     display: block;
 }
@@ -310,6 +310,20 @@ h3.card-header {
     #text-wrapper, #outlets-list {
         float: right;
         width: 54%;
+    }
+
+    /* Search page */
+    #search-content {
+        display: flex;
+        column-gap: 24px;
+    }
+
+    #search-by-outlet, #search-by-type {
+        flex: 50%;
+    }
+
+    #search-by-type {
+        margin-top: 0;
     }
 }
 
