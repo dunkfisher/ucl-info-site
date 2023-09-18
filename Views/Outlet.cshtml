@@ -7,7 +7,7 @@
 @foreach (var foodGrouping in Model.GroupedListings)
 {	
 	<div class="food-card">
-		<h3 class="card-header">@foodGrouping.Key.ToUpper()</h3>
+		<h3 class="card-header">@foodGrouping.Key</h3>
 		<div class="card-body">
 			@foreach (var food in foodGrouping.Value)
 			{

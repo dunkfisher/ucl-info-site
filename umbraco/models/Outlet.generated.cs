@@ -50,67 +50,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Bread
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("bread")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> Bread => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "bread");
-
-		///<summary>
-		/// Breakfast
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("breakfast")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> Breakfast => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "breakfast");
-
-		///<summary>
-		/// Cereal
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("cereal")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> Cereal => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "cereal");
-
-		///<summary>
-		/// Dinner
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("dinner")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> Dinner => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "dinner");
-
-		///<summary>
-		/// Drinks
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("drinks")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> Drinks => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "drinks");
-
-		///<summary>
 		/// Is Retail
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
 		[ImplementPropertyType("isRetail")]
 		public virtual bool IsRetail => this.Value<bool>(_publishedValueFallback, "isRetail");
-
-		///<summary>
-		/// Lunch
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("lunch")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> Lunch => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "lunch");
-
-		///<summary>
-		/// Lunches
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("lunches")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> Lunches => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "lunches");
 
 		///<summary>
 		/// Product List
@@ -119,54 +63,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("productList")]
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel ProductList => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "productList");
-
-		///<summary>
-		/// Ready Meals
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("readyMeals")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> ReadyMeals => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "readyMeals");
-
-		///<summary>
-		/// Sauces, Dip etc
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("saucesDipEtc")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> SaucesDipEtc => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "saucesDipEtc");
-
-		///<summary>
-		/// Snack
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("snack")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> Snack => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "snack");
-
-		///<summary>
-		/// Snacks
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("snacks")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> Snacks => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "snacks");
-
-		///<summary>
-		/// Soup
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("soup")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> Soup => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "soup");
-
-		///<summary>
-		/// Treats
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "12.0.1+20a4e47")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("treats")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> Treats => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "treats");
 
 		///<summary>
 		/// Hide from Navigation

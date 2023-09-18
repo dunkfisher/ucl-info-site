@@ -25,72 +25,13 @@ namespace Upf_Info_Site
 		{
             var foodListingVm = new FoodListingViewModel(CurrentPage, new PublishedValueFallback(_serviceContext, _variationContextAccessor));
 			foodListingVm.Heading = CurrentPage?.Name ?? string.Empty;
-
-            string[] typeAliases;
             var currentPage = (Outlet)CurrentPage;
             foreach (var blockItem in currentPage.ProductList)
             {
                 var productGroup = (ProductGroup)blockItem.Content;
                 foodListingVm.GroupedListings.Add(productGroup.Heading, productGroup.Products);
             }
-
             return CurrentTemplate(foodListingVm);
         }
-
-        #region WIP for filtering on different things
-
-        //public OutletController(
-        //    IUmbracoContextAccessor umbracoContextAccessor,
-        //    IUmbracoDatabaseFactory databaseFactory,
-        //    ServiceContext services,
-        //    AppCaches appCaches,
-        //    IProfilingLogger profilingLogger,
-        //    IPublishedUrlProvider publishedUrlProvider)
-        //    : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-        //{
-        //    _umbracoContext = umbracoContextAccessor.GetRequiredUmbracoContext();
-        //}
-
-        //public IActionResult Index(string outlet = "", string mealType = "", string foodType = "")
-        //{
-        //    if (string.IsNullOrEmpty(outlet))
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var foodListing = new FoodListing();
-        //    foodListing.Heading = outlet;
-
-        //    var outletPage = _umbracoContext.Content.GetById(Guid.Parse(OutletFolderId))
-        //        .Children
-        //        .SingleOrDefault(x => string.Equals(x.Name, outlet, StringComparison.CurrentCultureIgnoreCase));
-
-        //    if (outletPage == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    string[] typeAliases;
-        //    if (outletPage.HasValue("isRetail") && outletPage.Value<bool>("isRetail"))
-        //    {
-        //        typeAliases = _foodTypeAliases;
-        //    }
-        //    else
-        //    {
-        //        typeAliases = _mealTypeAliases;
-        //    }
-
-        //    foreach (var type in typeAliases)
-        //    {
-        //        if (outletPage.HasValue(type))
-        //        {
-        //            foodListing.GroupedListings.Add(type, outletPage.Value<List<string>>(type));
-        //        }
-        //    }
-
-        //    return View("FoodListing", foodListing);
-        //}
-
-        #endregion
     }
 }

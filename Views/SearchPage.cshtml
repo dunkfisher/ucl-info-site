@@ -3,9 +3,10 @@
 @{
     Layout = "Master.cshtml";
 
-    var outlets = Umbraco.ContentAtRoot()
+    var outletRoot = Umbraco.ContentAtRoot()
         .First()
-        .Descendants<Outlet>();
+        .Descendant<OutletRoot>();
+    var outlets = outletRoot.Children<Outlet>();
 }
 
 @if (Model.HasValue("heading"))
@@ -25,7 +26,7 @@
             <h3>Outlet</h3>
             @foreach (var outlet in outlets.Where(x => !x.IsRetail))
             {
-                <a class="search-trigger">@outlet.Name</a>
+                <a class="search-trigger" href="@outlet.Url()">@outlet.Name</a>
             }
         </div>
 
@@ -33,7 +34,7 @@
             <h3>Store</h3>
             @foreach (var outlet in outlets.Where(x => x.IsRetail))
             {
-                <a class="search-trigger">@outlet.Name</a>
+                <a class="search-trigger" href="@outlet.Url()">@outlet.Name</a>
             }
         </div>
     </div>
@@ -41,10 +42,11 @@
     <div id="search-by-type">
         <h2>Search by type</h2>
         @foreach (var group in outlets.SelectMany(x => x.ProductList.Select(y => ((ProductGroup)y.Content).Heading))
-        .Distinct()
-        .Order())
+            .Distinct()
+            .Order())
         {
-            <a class="search-trigger">@group</a>
+            var foodTypeUrl = $"{outletRoot.Url()}?foodType={group}";
+            <a class="search-trigger" href="@foodTypeUrl">@group</a>
         }
     </div>
 </div>
