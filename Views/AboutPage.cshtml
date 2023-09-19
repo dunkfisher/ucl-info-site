@@ -1,17 +1,25 @@
 ﻿@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.AboutPage>
 @{
-	Layout = "Master.cshtml";
+	Layout = "Master.cshtml";	
 }
 
-@if (Model.HasValue("heading"))
+<h1>@Model.Heading</h1>
+<p>@Model.MainText</p>
+@foreach (var blockListItem in Model.TeamList)
 {
-    <h1>@(Model.Value("heading"))</h1>
+	var teamMember = (ContentModels.PersonSummary)blockListItem.Content;
+	<div class="team-member">
+		@{
+			var image = (ContentModels.Image)teamMember.PersonImage.Content;
+			var isPortrait = image.UmbracoWidth < image.UmbracoHeight;
+			var wrapperCss = " style=\"flex-direction: " + (isPortrait ? "column\"" : "row\"");
+			var imgCss = " style=\"" + (isPortrait ? "width: 200px\"" : "height: 200px\"");
+		}
+		<div class="image-wrapper"@Html.Raw(wrapperCss)>
+			<img src="@teamMember.PersonImage.MediaUrl()" alt="@teamMember.PersonName"@Html.Raw(imgCss) />
+		</div>
+		<h3>@teamMember.PersonName</h3>
+		<p>@teamMember.PersonBio</p>
+	</div>
 }
-
-@if (Model.HasValue("mainText"))
-{
-    <p>@(Model.Value("mainText"))</p>
-}
-
-<strong>PAGE UNDER CONSTRUCTION</strong>

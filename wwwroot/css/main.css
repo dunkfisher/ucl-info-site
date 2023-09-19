@@ -287,6 +287,29 @@ h3.card-header {
     display: none;
 }
 
+/* About page */
+.team-member {
+    margin: 48px 0;
+    text-align: center;
+}
+
+    .team-member .image-wrapper {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        margin: 0 auto 12px auto;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .team-member img {         
+        margin: auto auto;
+        max-inline-size: none;
+        max-block-size: none;
+        
+    }
+
 @media screen and (min-width: 800px) {
     #main-menu {
         display: block;
@@ -324,6 +347,11 @@ h3.card-header {
 
     #search-by-type {
         margin-top: 0;
+    }
+
+    /* About page */
+    .team-member p {
+        padding: 0 5vw;
     }
 }
 
