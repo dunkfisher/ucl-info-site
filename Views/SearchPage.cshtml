@@ -9,15 +9,8 @@
     var outlets = outletRoot.Children<Outlet>();
 }
 
-@if (Model.HasValue("heading"))
-{
-    <h1>@(Model.Value("heading"))</h1>
-}
-
-@if (Model.HasValue("mainText"))
-{
-    <p>@(Model.Value("mainText"))</p>
-}
+<h1>@Model.Heading</h1>
+<p>@Model.MainText</p>
 
 <div id="search-content">
     <div id="search-by-outlet">
