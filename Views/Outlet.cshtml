@@ -11,7 +11,16 @@
 		<div class="card-body">
 			@foreach (var food in foodGrouping.Value)
 			{
-				@food<br />
+				if (!string.IsNullOrEmpty(food.Url))
+				{
+					<a href="@food.Url" target="_blank">@food.Name</a>
+					
+				}
+				else
+				{
+					@food.Name
+				}
+				<br />
 			}
 		</div>		
 	</div>

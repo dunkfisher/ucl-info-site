@@ -34,7 +34,7 @@
 
     <div id="search-by-type">
         <h2>Search by type</h2>
-        @foreach (var group in outlets.SelectMany(x => x.ProductList.Select(y => ((ProductGroup)y.Content).Heading))
+        @foreach (var group in outlets.SelectMany(x => x.ProductList.Select(y => ((ProductGroup1)y.Content).Heading))
             .Distinct()
             .Order())
         {

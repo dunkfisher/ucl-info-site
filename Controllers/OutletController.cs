@@ -28,8 +28,14 @@ namespace Upf_Info_Site
             var currentPage = (Outlet)CurrentPage;
             foreach (var blockItem in currentPage.ProductList)
             {
-                var productGroup = (ProductGroup)blockItem.Content;
-                foodListingVm.GroupedListings.Add(productGroup.Heading, productGroup.Products);
+                var foodList = new List<Food>();
+                var productGroup = (ProductGroup1)blockItem.Content;
+                foreach (var blockItem2 in productGroup.Products)
+                {
+                    var foodDetails = (TextWithLink)blockItem2.Content;
+                    foodList.Add(new Food { Name = foodDetails.Text, Url = foodDetails.Link });
+                }
+                foodListingVm.GroupedListings.Add(productGroup.Heading, foodList);
             }
             return CurrentTemplate(foodListingVm);
         }

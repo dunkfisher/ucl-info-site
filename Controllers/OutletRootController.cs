@@ -31,20 +31,27 @@ namespace Upf_Info_Site
             var outlets = outletRoot.Children<Outlet>();
             foreach(var outlet in outlets)
             {
-                IEnumerable<string> matchingProducts = null;
-                foreach (var blockItem in outlet.ProductList)
-                {                    
-                    var productGroup = (ProductGroup)blockItem.Content;
-                    if (productGroup.Heading.Equals(foodType, StringComparison.CurrentCultureIgnoreCase))
-                    {
-                        matchingProducts = productGroup.Products;
-                        break;
-                    }
+                var matchFound = false;
+                var foodList = new List<Food>();
+
+				foreach (var blockItem in outlet.ProductList)
+                {					
+					var productGroup = (ProductGroup1)blockItem.Content;
+					if (productGroup.Heading.Equals(foodType, StringComparison.CurrentCultureIgnoreCase))
+					{												
+						foreach (var blockItem2 in productGroup.Products)
+						{
+							var foodDetails = (TextWithLink)blockItem2.Content;
+							foodList.Add(new Food { Name = foodDetails.Text, Url = foodDetails.Link });
+						}
+						matchFound = true;
+						break;
+					}
                 }
 
-                if (matchingProducts != null)
-                {
-                    foodListingVm.GroupedListings.Add(outlet.Name, matchingProducts);
+                if (matchFound)
+                {   
+                    foodListingVm.GroupedListings.Add(outlet.Name, foodList);
                 }
             }
             return View("Outlet", foodListingVm);
