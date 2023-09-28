@@ -1,0 +1,16 @@
+﻿
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.StandardSectionPage>
+@{
+    Layout = "Master.cshtml";    
+}
+
+<h1>@Model.Heading</h1>
+<p>@Model.MainText</p>
+
+@foreach (var blockItem in Model.Sections)
+{
+    var textSection = (TextSection)blockItem.Content;
+    <h3>@textSection.Heading</h3>
+    @textSection.Text
+}
