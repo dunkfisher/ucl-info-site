@@ -54,7 +54,7 @@ namespace Upf_Info_Site
                     foodListingVm.GroupedListings.Add(outlet.Name, foodList);
                 }
             }
-            return View("Outlet", foodListingVm);
+            return View("FoodListing", foodListingVm);
         }
     }
 }
