@@ -1,0 +1,361 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #4c4e52;
+}
+
+h1 {
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.6em;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 0.4em;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+}
+
+p {
+    margin-bottom: 0.6em;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+li {
+    margin: 0 0 6px 20px;
+}
+
+#wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    border: 1px solid #1d7151;
+}
+
+#main-menu, #content {
+    padding: 12px;
+}
+
+#header, #footer {
+    background-color: #1d7151;
+}
+
+#header {
+    height: 90px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #1d7151;
+}
+
+#logo {
+    height: 100%;
+    float: left;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a,
+nav h2,
+#footer {
+    color: #96ceb4;
+}
+
+nav a {
+    font-size: 1.2em;
+}
+
+#burger-wrapper {
+    float: right;
+    height: 100%;
+    padding: 17px 0;
+}
+
+#burger-input {
+    display: none;
+}
+
+#burger-menu {
+    width: 50px;
+    height: 100%;
+    background: linear-gradient( to bottom, #96ceb4, #96ceb4 20%, #1d7151 20%, #1d7151 40%, #96ceb4 40%, #96ceb4 60%, #1d7151 60%, #1d7151 80%, #96ceb4 80%, #96ceb4 100% );
+    display: inline-block;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .35s, visibility .35s, height .35s;
+    background-color: #1d7151;
+    z-index: -1;
+    visibility: hidden;
+}
+
+#burger-menu #sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -80vw;
+    width: 80vw;
+    height: 100%;
+    padding: 10px;
+    border-right: 1px solid #96ceb4;
+    background-color: #1d7151;
+    transition: 0.3s;
+    visibility: hidden;
+}
+
+#burger-menu li {
+    margin-bottom: 0.5em;
+}
+
+#burger-input:checked + #burger-menu #sidebar-menu {
+    left: 0;
+    visibility: visible;
+}
+
+#burger-input:checked ~ .overlay {
+    opacity: 0.4;
+    visibility: visible;
+}
+
+#main-menu {
+    border-bottom: 1px solid #1d7151;
+    background: transparent url(../images/cutlery.png) no-repeat left center;
+    background-size: 50px;
+    display: none;
+}
+
+#main-menu ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#main-menu li {
+    padding: 0 10px;
+}
+
+#main-menu a {
+    font-size: 1em;
+    color: #1d7151;
+}
+
+#main-menu a:hover {
+    color: #2cab7a;
+}
+
+#content {
+    min-height: 50vh;
+    padding-bottom: 60px;
+}
+
+#content a {
+    color: #2cab7a;
+}
+
+#footer {
+    height: 56px;
+    padding: 8px 12px;
+    border-top: 1px solid #1d7151;
+}
+
+#footer-image {
+    float: right;
+    height: 100%;
+}
+
+/* Map page */
+#map-page-body .image-map {
+    margin-top: 10px;
+}
+
+#uclh-map {
+    border: 1px solid #4c4e52;
+}
+
+#text-wrapper p:first-child {
+    margin: 0; /* Prevent extra space with empty paragraph */
+}
+
+#outlets-list li::before {
+    content: counter(outlet-counter);
+    color: black;
+}
+
+#outlets-list {
+    list-style: none;
+    display: block;
+    margin-top: 10px;
+    padding: 20px;
+    counter-reset: outlet-counter;
+    border: 1px solid black;
+    background-color: #aea59b;
+}
+
+#outlets-list li {
+    width: 40%;
+    margin-right: 20px;
+    float: left;
+    position: relative
+}
+
+#outlets-list li:before {
+    counter-increment: outlet-counter;
+    content: counter(outlet-counter);
+    float: left;
+    position: absolute;
+    top: 3px;
+    left: -26px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: bold;
+    background: white;
+    -moz-border-radius: 999px;
+    border-radius: 999px
+}
+
+#outlets-list a {
+    color: white;
+}
+
+#outlets-list a:hover {
+    text-decoration: underline;
+}
+
+/* Search page */
+#search-by-type {
+    margin-top: 24px;
+}
+
+.search-category {
+    padding: 12px;
+    border: 1px solid #1d7151;
+}
+
+.search-category:not(:first-child) {
+    margin-top: 12px;
+}
+
+a.search-trigger {
+    margin: 6px 0;
+    padding: 12px;
+    text-align: center;
+    border: 3px solid #1d7151;
+    background-color: #96ceb4;
+    display: block;
+}
+
+/* Outlet page */
+.food-card {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    background-color: #96ceb4;
+}
+
+h3.card-header {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.card-body {
+    overflow: hidden;
+    margin-top: 0.4em;
+    display: none;
+}
+
+/* About page */
+.team-member {
+    margin: 48px 0;
+    text-align: center;
+}
+
+.team-member .image-wrapper {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto 12px auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.team-member img {
+    margin: auto auto;
+    max-inline-size: none;
+    max-block-size: none;
+}
+
+@media screen and (min-width: 800px) {
+    #main-menu {
+        display: block;
+    }
+
+    #burger-menu {
+        display: none;
+    }
+
+    /* Map page */
+    #map-page-body .image-map {
+        margin-top: 0;
+    }
+
+    #uclh-map {
+        float: left;
+        width: 44%;
+        margin-right: 2%;
+    }
+
+    #text-wrapper, #outlets-list {
+        float: right;
+        width: 54%;
+    }
+
+    /* Search page */
+    #search-content {
+        display: flex;
+        column-gap: 24px;
+    }
+
+    #search-by-outlet, #search-by-type {
+        flex: 50%;
+    }
+
+    #search-by-type {
+        margin-top: 0;
+    }
+
+    /* About page */
+    .team-member p {
+        padding: 0 5vw;
+    }
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
