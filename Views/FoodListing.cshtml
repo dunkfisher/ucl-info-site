@@ -7,8 +7,8 @@
 @foreach (var foodGrouping in Model.GroupedListings)
 {	
 	<div class="food-card">
-		<h3 class="card-header">@foodGrouping.Key</h3>
-		<div class="card-body">
+		<h3 class="card-header collapse-section-header">@foodGrouping.Key</h3>
+		<div class="card-body collapse-section-body">
 			@foreach (var food in foodGrouping.Value)
 			{
 				if (!string.IsNullOrEmpty(food.Url))

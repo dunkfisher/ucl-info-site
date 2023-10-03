@@ -12,10 +12,20 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrFJA.ttf) format('truetype');
 }
+/*
+#1D7151 - dark green accents
+#96CEB4 - main green used
+#1B2A4D - colour used for all text
+#FFCC3F - a yellow used for some text boxes
+#74C1E0 - blue used for some text boxes
+#CCDCBA - another light green used for text boxes
+#E9EAEC - grey used for banners on all pages
+*/
 body {
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
-  color: #4c4e52;
+  color: #1B2A4D;
+  background-color: #E9EAEC;
 }
 h1 {
   font-size: 1.6em;
@@ -46,19 +56,17 @@ li {
   max-width: 1024px;
   margin: 0 auto;
   border: 1px solid #1d7151;
+  background-color: white;
 }
 #main-menu,
 #content {
   padding: 12px;
 }
-#header,
-#footer {
-  background-color: #1d7151;
-}
 #header {
   height: 90px;
   padding: 8px 12px;
   border-bottom: 1px solid #1d7151;
+  background-color: #1D7151;
 }
 #logo {
   height: 100%;
@@ -73,7 +81,7 @@ nav li {
 nav a,
 nav h2,
 #footer {
-  color: #96ceb4;
+  color: white;
 }
 nav a {
   font-size: 1.2em;
@@ -89,7 +97,7 @@ nav a {
 #burger-menu {
   width: 50px;
   height: 100%;
-  background: linear-gradient(to bottom, #96ceb4, #96ceb4 20%, #1d7151 20%, #1d7151 40%, #96ceb4 40%, #96ceb4 60%, #1d7151 60%, #1d7151 80%, #96ceb4 80%, #96ceb4 100%);
+  background: linear-gradient(to bottom, white, white 20%, #1D7151 20%, #1D7151 40%, white 40%, white 60%, #1D7151 60%, #1D7151 80%, white 80%, white 100%);
   display: inline-block;
 }
 .overlay {
@@ -111,7 +119,7 @@ nav a {
   width: 80vw;
   height: 100%;
   padding: 10px;
-  border-right: 1px solid #96ceb4;
+  border-right: 1px solid #96CEB4;
   background-color: #1d7151;
   transition: 0.3s;
   visibility: hidden;
@@ -153,16 +161,32 @@ nav a {
   padding-bottom: 60px;
 }
 #content a {
-  color: #2cab7a;
+  color: #74C1E0;
 }
 #footer {
   height: 56px;
   padding: 8px 12px;
   border-top: 1px solid #1d7151;
+  background-color: #CCDCBA;
 }
 #footer-image {
   float: right;
   height: 100%;
+}
+/* Collapsible section */
+.standard-section {
+  margin-bottom: 24px;
+}
+.collapse-section-header {
+  cursor: pointer;
+}
+.collapse-section-header:not(.card-header) {
+  padding-bottom: 4px;
+  border-bottom: 1px solid #74C1E0;
+}
+.collapse-section-body {
+  overflow: hidden;
+  display: none;
 }
 /* Map page */
 #map-page-body .image-map {
@@ -232,26 +256,22 @@ a.search-trigger {
   margin: 6px 0;
   padding: 12px;
   text-align: center;
-  border: 3px solid #1d7151;
-  background-color: #96ceb4;
+  border: 3px solid #74C1E0;
+  background-color: #CCDCBA;
   display: block;
 }
-/* Outlet page */
+/* Food listing page */
 .food-card {
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 15px;
-  color: white;
-  background-color: #96ceb4;
+  background-color: #CCDCBA;
 }
 h3.card-header {
   margin-bottom: 0;
-  cursor: pointer;
 }
 .card-body {
-  overflow: hidden;
   margin-top: 0.4em;
-  display: none;
 }
 /* About page */
 .team-member {
@@ -267,7 +287,7 @@ h3.card-header {
   display: flex;
   justify-content: center;
 }
-.team-member img {
+.team-member .image-wrapper img {
   margin: auto auto;
   max-inline-size: none;
   max-block-size: none;

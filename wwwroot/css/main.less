@@ -1,9 +1,31 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
+/*
+#1D7151 - dark green accents
+#96CEB4 - main green used
+#1B2A4D - colour used for all text
+#FFCC3F - a yellow used for some text boxes
+#74C1E0 - blue used for some text boxes
+#CCDCBA - another light green used for text boxes
+#E9EAEC - grey used for banners on all pages
+*/
+
+@standard-gutter: 12px;
+
+// Palette
+@colour1: #1D7151;
+@colour2: #96CEB4;
+@colour3: #FFCC3F;
+@colour4: #74C1E0;
+@colour5: #CCDCBA;
+@colour6: #E9EAEC;
+@text-colour-main: #1B2A4D;
+
 body {
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
-    color: #4c4e52;
+    color: @text-colour-main;
+    background-color: @colour6;
 }
 
 h1 {
@@ -41,20 +63,18 @@ li {
     max-width: 1024px;
     margin: 0 auto;
     border: 1px solid #1d7151;
+    background-color: white;
 }
 
 #main-menu, #content {
-    padding: 12px;
-}
-
-#header, #footer {
-    background-color: #1d7151;
+    padding: @standard-gutter;
 }
 
 #header {
     height: 90px;
-    padding: 8px 12px;
+    padding: 8px @standard-gutter;
     border-bottom: 1px solid #1d7151;
+    background-color: @colour1;
 }
 
 #logo {
@@ -73,7 +93,7 @@ nav li {
 nav a,
 nav h2,
 #footer {
-    color: #96ceb4;
+    color: white;
 }
 
 nav a {
@@ -93,7 +113,7 @@ nav a {
 #burger-menu {
     width: 50px;
     height: 100%;
-    background: linear-gradient( to bottom, #96ceb4, #96ceb4 20%, #1d7151 20%, #1d7151 40%, #96ceb4 40%, #96ceb4 60%, #1d7151 60%, #1d7151 80%, #96ceb4 80%, #96ceb4 100% );
+    background: linear-gradient( to bottom, white, white 20%, @colour1 20%, @colour1 40%, white 40%, white 60%, @colour1 60%, @colour1 80%, white 80%, white 100% );
     display: inline-block;
 }
 
@@ -117,7 +137,7 @@ nav a {
     width: 80vw;
     height: 100%;
     padding: 10px;
-    border-right: 1px solid #96ceb4;
+    border-right: 1px solid @colour2;
     background-color: #1d7151;
     transition: 0.3s;
     visibility: hidden;
@@ -169,18 +189,38 @@ nav a {
 }
 
 #content a {
-    color: #2cab7a;
+    color: @colour4;
 }
 
 #footer {
     height: 56px;
-    padding: 8px 12px;
+    padding: 8px @standard-gutter;
     border-top: 1px solid #1d7151;
+    background-color: @colour5;
 }
 
 #footer-image {
     float: right;
     height: 100%;
+}
+
+/* Collapsible section */
+.standard-section {
+    margin-bottom: 24px;
+}
+
+.collapse-section-header {
+    cursor: pointer;
+}
+
+.collapse-section-header:not(.card-header) {
+    padding-bottom: 4px;
+    border-bottom: 1px solid @colour4;    
+}
+
+.collapse-section-body {
+    overflow: hidden;    
+    display: none;
 }
 
 /* Map page */
@@ -209,31 +249,31 @@ nav a {
     counter-reset: outlet-counter;
     border: 1px solid black;
     background-color: #aea59b;
-}
 
-#outlets-list li {
-    width: 40%;
-    margin-right: 20px;
-    float: left;
-    position: relative
-}
+    li {
+        width: 40%;
+        margin-right: 20px;
+        float: left;
+        position: relative
+    }
 
-#outlets-list li:before {
-    counter-increment: outlet-counter;
-    content: counter(outlet-counter);
-    float: left;
-    position: absolute;
-    top: 3px;
-    left: -26px;
-    width: 18px;
-    height: 18px;
-    line-height: 18px;
-    text-align: center;
-    font-size: 0.7em;
-    font-weight: bold;
-    background: white;
-    -moz-border-radius: 999px;
-    border-radius: 999px
+    li:before {
+        counter-increment: outlet-counter;
+        content: counter(outlet-counter);
+        float: left;
+        position: absolute;
+        top: 3px;
+        left: -26px;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        font-size: 0.7em;
+        font-weight: bold;
+        background: white;
+        -moz-border-radius: 999px;
+        border-radius: 999px
+    }
 }
 
 #outlets-list a {
@@ -243,70 +283,63 @@ nav a {
 #outlets-list a:hover {
     text-decoration: underline;
 }
-
 /* Search page */
 #search-by-type {
     margin-top: 24px;
 }
 
 .search-category {
-    padding: 12px;
+    padding: @standard-gutter;
     border: 1px solid #1d7151;
 }
 
 .search-category:not(:first-child) {
-    margin-top: 12px;
+    margin-top: @standard-gutter;
 }
 
 a.search-trigger {
     margin: 6px 0;
-    padding: 12px;
+    padding: @standard-gutter;
     text-align: center;
-    border: 3px solid #1d7151;
-    background-color: #96ceb4;
+    border: 3px solid @colour4;
+    background-color: @colour5;
     display: block;
 }
-
-/* Outlet page */
+/* Food listing page */
 .food-card {
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 15px;
-    color: white;
-    background-color: #96ceb4;
+    background-color: @colour5;
 }
 
 h3.card-header {
     margin-bottom: 0;
-    cursor: pointer;
 }
 
-.card-body {
-    overflow: hidden;
-    margin-top: 0.4em;
-    display: none;
+.card-body {    
+    margin-top: 0.4em;    
 }
-
 /* About page */
 .team-member {
     margin: 48px 0;
     text-align: center;
-}
 
-.team-member .image-wrapper {
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    margin: 0 auto 12px auto;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-}
+    .image-wrapper {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        margin: 0 auto @standard-gutter auto;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
 
-.team-member img {
-    margin: auto auto;
-    max-inline-size: none;
-    max-block-size: none;
+        img {
+            margin: auto auto;
+            max-inline-size: none;
+            max-block-size: none;
+        }
+    }
 }
 
 @media screen and (min-width: 800px) {
@@ -317,7 +350,6 @@ h3.card-header {
     #burger-menu {
         display: none;
     }
-
     /* Map page */
     #map-page-body .image-map {
         margin-top: 0;
@@ -333,7 +365,6 @@ h3.card-header {
         float: right;
         width: 54%;
     }
-
     /* Search page */
     #search-content {
         display: flex;
@@ -347,7 +378,6 @@ h3.card-header {
     #search-by-type {
         margin-top: 0;
     }
-
     /* About page */
     .team-member p {
         padding: 0 5vw;

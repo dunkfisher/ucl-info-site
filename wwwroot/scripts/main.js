@@ -1,6 +1,6 @@
 $(function () {
-    $(".card-header").on("click", function() {        
-        var cardBody = $(this).next(".card-body");   
-        cardBody.slideToggle();
+    $(".collapse-section-header").on("click", function() {        
+        var sectionBody = $(this).next(".collapse-section-body");   
+        sectionBody.slideToggle();
     });
 });

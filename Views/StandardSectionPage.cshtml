@@ -1,8 +1,7 @@
-﻿
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.StandardSectionPage>
 @{
-    Layout = "Master.cshtml";    
+    Layout = "Master.cshtml";
 }
 
 <h1>@Model.Heading</h1>
@@ -11,6 +10,10 @@
 @foreach (var blockItem in Model.Sections)
 {
     var textSection = (TextSection)blockItem.Content;
-    <h3>@textSection.Heading</h3>
-    @textSection.Text
+    <div class="standard-section">
+        <h3 class="collapse-section-header">@textSection.Heading</h3>
+        <div class="collapse-section-body">
+            @textSection.Text
+        </div>
+    </div>
 }
