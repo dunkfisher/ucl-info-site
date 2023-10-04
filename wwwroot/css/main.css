@@ -12,15 +12,6 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrFJA.ttf) format('truetype');
 }
-/*
-#1D7151 - dark green accents
-#96CEB4 - main green used
-#1B2A4D - colour used for all text
-#FFCC3F - a yellow used for some text boxes
-#74C1E0 - blue used for some text boxes
-#CCDCBA - another light green used for text boxes
-#E9EAEC - grey used for banners on all pages
-*/
 body {
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
@@ -32,14 +23,15 @@ h1 {
   font-weight: bold;
   text-align: center;
   margin-bottom: 0.6em;
+  border-bottom: 1px dashed #96CEB4;
 }
 h2 {
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-weight: bold;
   margin-bottom: 0.4em;
 }
 h3 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: bold;
   margin-bottom: 0.2em;
 }
@@ -52,10 +44,16 @@ ul {
 li {
   margin: 0 0 6px 20px;
 }
+a {
+  color: #74C1E0;
+}
+a:hover {
+  color: #FFCC3F;
+}
 #wrapper {
   max-width: 1024px;
   margin: 0 auto;
-  border: 1px solid #1d7151;
+  border: 1px solid #1D7151;
   background-color: white;
 }
 #main-menu,
@@ -65,7 +63,7 @@ li {
 #header {
   height: 90px;
   padding: 8px 12px;
-  border-bottom: 1px solid #1d7151;
+  border-bottom: 1px solid #1D7151;
   background-color: #1D7151;
 }
 #logo {
@@ -75,16 +73,16 @@ li {
 nav ul {
   list-style-type: none;
 }
-nav li {
+nav ul li {
   margin: 0;
+}
+nav a {
+  font-size: 1.2em;
 }
 nav a,
 nav h2,
 #footer {
   color: white;
-}
-nav a {
-  font-size: 1.2em;
 }
 #burger-wrapper {
   float: right;
@@ -100,6 +98,21 @@ nav a {
   background: linear-gradient(to bottom, white, white 20%, #1D7151 20%, #1D7151 40%, white 40%, white 60%, #1D7151 60%, #1D7151 80%, white 80%, white 100%);
   display: inline-block;
 }
+#burger-menu li {
+  margin-bottom: 0.5em;
+}
+#sidebar-menu {
+  position: fixed;
+  top: 0;
+  left: -80vw;
+  width: 80vw;
+  height: 100%;
+  padding: 10px;
+  border-right: 1px solid #96CEB4;
+  background-color: #1D7151;
+  transition: 0.3s;
+  visibility: hidden;
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -108,24 +121,9 @@ nav a {
   height: 100%;
   opacity: 0;
   transition: opacity 0.35s, visibility 0.35s, height 0.35s;
-  background-color: #1d7151;
+  background-color: #1D7151;
   z-index: -1;
   visibility: hidden;
-}
-#burger-menu #sidebar-menu {
-  position: fixed;
-  top: 0;
-  left: -80vw;
-  width: 80vw;
-  height: 100%;
-  padding: 10px;
-  border-right: 1px solid #96CEB4;
-  background-color: #1d7151;
-  transition: 0.3s;
-  visibility: hidden;
-}
-#burger-menu li {
-  margin-bottom: 0.5em;
 }
 #burger-input:checked + #burger-menu #sidebar-menu {
   left: 0;
@@ -136,7 +134,7 @@ nav a {
   visibility: visible;
 }
 #main-menu {
-  border-bottom: 1px solid #1d7151;
+  border-bottom: 1px solid #1D7151;
   background: transparent url(../images/cutlery.png) no-repeat left center;
   background-size: 50px;
   display: none;
@@ -146,28 +144,25 @@ nav a {
   justify-content: space-evenly;
   align-items: center;
 }
-#main-menu li {
+#main-menu ul li {
   padding: 0 10px;
 }
 #main-menu a {
   font-size: 1em;
-  color: #1d7151;
+  color: #74C1E0;
 }
 #main-menu a:hover {
-  color: #2cab7a;
+  color: #FFCC3F;
 }
 #content {
   min-height: 50vh;
   padding-bottom: 60px;
 }
-#content a {
-  color: #74C1E0;
-}
 #footer {
   height: 56px;
   padding: 8px 12px;
-  border-top: 1px solid #1d7151;
-  background-color: #CCDCBA;
+  border-top: 1px solid #1D7151;
+  background-color: #FFCC3F;
 }
 #footer-image {
   float: right;
@@ -182,7 +177,7 @@ nav a {
 }
 .collapse-section-header:not(.card-header) {
   padding-bottom: 4px;
-  border-bottom: 1px solid #74C1E0;
+  border-bottom: 1px solid #CCDCBA;
 }
 .collapse-section-body {
   overflow: hidden;
@@ -193,15 +188,11 @@ nav a {
   margin-top: 10px;
 }
 #uclh-map {
-  border: 1px solid #4c4e52;
+  border: 1px solid #1D7151;
 }
 #text-wrapper p:first-child {
   margin: 0;
   /* Prevent extra space with empty paragraph */
-}
-#outlets-list li::before {
-  content: counter(outlet-counter);
-  color: black;
 }
 #outlets-list {
   list-style: none;
@@ -209,8 +200,7 @@ nav a {
   margin-top: 10px;
   padding: 20px;
   counter-reset: outlet-counter;
-  border: 1px solid black;
-  background-color: #aea59b;
+  background-color: #1B2A4D;
 }
 #outlets-list li {
   width: 40%;
@@ -239,7 +229,7 @@ nav a {
   color: white;
 }
 #outlets-list a:hover {
-  text-decoration: underline;
+  color: #FFCC3F;
 }
 /* Search page */
 #search-by-type {
@@ -247,7 +237,7 @@ nav a {
 }
 .search-category {
   padding: 12px;
-  border: 1px solid #1d7151;
+  border: 1px solid #96CEB4;
 }
 .search-category:not(:first-child) {
   margin-top: 12px;
@@ -256,8 +246,8 @@ a.search-trigger {
   margin: 6px 0;
   padding: 12px;
   text-align: center;
-  border: 3px solid #74C1E0;
-  background-color: #CCDCBA;
+  border: 1px solid #1D7151;
+  background-color: #E9EAEC;
   display: block;
 }
 /* Food listing page */
@@ -265,7 +255,7 @@ a.search-trigger {
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 15px;
-  background-color: #CCDCBA;
+  background-color: #E9EAEC;
 }
 h3.card-header {
   margin-bottom: 0;
