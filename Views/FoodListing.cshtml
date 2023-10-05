@@ -7,9 +7,10 @@
 <div id="food-cards">
     @{
         var cardCount = Model.GroupedListings.Count;
+        var cardsInFirstCol = cardCount % 2 == 0 ? cardCount / 2 : (cardCount / 2 + 1);
     }
     <div class="column-0">
-        @for (var i = 0; i < cardCount / 2; i++)
+        @for (var i = 0; i < cardsInFirstCol; i++)
         {
             var foodGrouping = Model.GroupedListings.ElementAt(i);
             <div class="food-card">
@@ -34,7 +35,7 @@
         }
     </div>
     <div class="column-1">
-        @for (var i = cardCount / 2; i < cardCount; i++)
+        @for (var i = cardsInFirstCol; i < cardCount; i++)
         {
             var foodGrouping = Model.GroupedListings.ElementAt(i);
             <div class="food-card">
