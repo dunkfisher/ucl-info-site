@@ -22,6 +22,7 @@ h1 {
   font-size: 1.6em;
   font-weight: bold;
   text-align: center;
+  padding-bottom: 12px;
   margin-bottom: 0.6em;
   border-bottom: 1px dashed #96CEB4;
 }
@@ -53,6 +54,9 @@ a:hover {
 details summary {
   list-style-type: revert;
   cursor: pointer;
+}
+details summary h3 {
+  display: inline;
 }
 #wrapper {
   max-width: 1024px;
@@ -308,6 +312,15 @@ a.search-trigger {
   }
   #search-by-type {
     margin-top: 0;
+  }
+  /* Food listing page */
+  #food-cards {
+    display: flex;
+    gap: 12px;
+  }
+  #food-cards .column-0,
+  #food-cards .column-1 {
+    flex: 50%;
   }
   /* About page */
   .team-member p {

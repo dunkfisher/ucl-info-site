@@ -1,29 +1,61 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Upf_Info_Site.Models.FoodListingViewModel>
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
 
 <h1>@(Model.Heading)</h1>
-@foreach (var foodGrouping in Model.GroupedListings)
-{	
-	<div class="food-card">
-		<details>
-			<summary>
-				<h3>@foodGrouping.Key</h3>
-			</summary>
-			@foreach (var food in foodGrouping.Value)
-			{
-				if (!string.IsNullOrEmpty(food.Url))
-				{
-					<a href="@food.Url" target="_blank">@food.Name</a>
-
-				}
-				else
-				{
-					@food.Name
-				}
-				<br />
-			}
-		</details>	
-	</div>
-}
+<div id="food-cards">
+    @{
+        var cardCount = Model.GroupedListings.Count;
+    }
+    <div class="column-0">
+        @for (var i = 0; i < cardCount / 2; i++)
+        {
+            var foodGrouping = Model.GroupedListings.ElementAt(i);
+            <div class="food-card">
+                <details>
+                    <summary>
+                        <h3>@foodGrouping.Key</h3>
+                    </summary>
+                    @foreach (var food in foodGrouping.Value)
+                    {
+                        if (!string.IsNullOrEmpty(food.Url))
+                        {
+                            <a href="@food.Url" target="_blank">@food.Name</a>
+                        }
+                        else
+                        {
+                            @food.Name
+                        }
+                        <br />
+                    }
+                </details>
+            </div>
+        }
+    </div>
+    <div class="column-1">
+        @for (var i = cardCount / 2; i < cardCount; i++)
+        {
+            var foodGrouping = Model.GroupedListings.ElementAt(i);
+            <div class="food-card">
+                <details>
+                    <summary>
+                        <h3>@foodGrouping.Key</h3>
+                    </summary>
+                    @foreach (var food in foodGrouping.Value)
+                    {
+                        if (!string.IsNullOrEmpty(food.Url))
+                        {
+                            <a href="@food.Url" target="_blank">@food.Name</a>
+                        }
+                        else
+                        {
+                            @food.Name
+                        }
+                        <br />
+                    }
+                </details>
+            </div>
+        }        
+    </div>
+</div>

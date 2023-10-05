@@ -24,6 +24,7 @@ h1 {
     font-size: 1.6em;
     font-weight: bold;
     text-align: center;
+    padding-bottom: @standard-gutter;
     margin-bottom: 0.6em;
     border-bottom: 1px dashed @colour2;
 }
@@ -63,6 +64,10 @@ a {
 details summary {
     list-style-type: revert;
     cursor: pointer;
+
+    h3 {
+        display: inline;
+    }
 }
 
 #wrapper {
@@ -369,6 +374,16 @@ a.search-trigger {
 
     #search-by-type {
         margin-top: 0;
+    }
+
+    /* Food listing page */
+    #food-cards {
+        display: flex;
+        gap: @standard-gutter;
+
+        .column-0, .column-1 {
+            flex: 50%;
+        }
     }
 
     /* About page */
