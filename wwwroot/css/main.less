@@ -205,12 +205,17 @@ nav h2,
     height: 56px;
     padding: 8px @standard-gutter;
     border-top: 1px solid @colour1;
-    background-color: @colour4;
+    background-color: @colour2;
 }
 
 #footer-image {
     float: right;
     height: 100%;
+}
+
+/* Rich text section */
+#text-wrapper img {
+    object-fit: contain;
 }
 
 /* Collapsible section */
@@ -236,10 +241,6 @@ nav h2,
 
 #uclh-map {
     border: 1px solid @colour1;
-}
-
-#text-wrapper p:first-child {
-    margin: 0; /* Prevent extra space with empty paragraph */
 }
 
 #outlets-list {
@@ -357,9 +358,11 @@ a.search-trigger {
         margin-right: 2%;
     }
 
-    #text-wrapper, #outlets-list {
-        float: right;
-        width: 54%;
+    #map-page-body {
+        #text-wrapper, #outlets-list {
+            float: right;
+            width: 54%;
+        }
     }
 
     /* Search page */

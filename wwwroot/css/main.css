@@ -170,11 +170,15 @@ nav h2,
   height: 56px;
   padding: 8px 12px;
   border-top: 1px solid #1D7151;
-  background-color: #74C1E0;
+  background-color: #96CEB4;
 }
 #footer-image {
   float: right;
   height: 100%;
+}
+/* Rich text section */
+#text-wrapper img {
+  object-fit: contain;
 }
 /* Collapsible section */
 .standard-section {
@@ -193,10 +197,6 @@ nav h2,
 }
 #uclh-map {
   border: 1px solid #1D7151;
-}
-#text-wrapper p:first-child {
-  margin: 0;
-  /* Prevent extra space with empty paragraph */
 }
 #outlets-list {
   list-style: none;
@@ -296,8 +296,8 @@ a.search-trigger {
     width: 44%;
     margin-right: 2%;
   }
-  #text-wrapper,
-  #outlets-list {
+  #map-page-body #text-wrapper,
+  #map-page-body #outlets-list {
     float: right;
     width: 54%;
   }
