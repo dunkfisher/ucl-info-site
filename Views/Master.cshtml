@@ -33,17 +33,17 @@
                 <a href="/">
                     <img src="~/images/UPDATE Logo.png" alt="UPDATE project logo" />
                 </a>
-            </div>            
-            <div id="burger-wrapper">
-                <input type="checkbox" id="burger-input" class="burger-shower" />
-                <label id="burger-menu" for="burger-input">
-                    <nav id="sidebar-menu">
-                        <h2>Menu</h2>
-                        <partial name="_NavMenu" />
-                    </nav>
-                </label>
+            </div>    
+            <div id="burger-trigger">
+                <div id="burger-icon">
+                    <span id="burger-lines"></span>
+                </div>
             </div>
-            <div class="overlay"></div>
+            <nav id="sidebar-menu">
+                <h2>Menu</h2>
+                <partial name="_NavMenu" />
+            </nav>
+            <div id="overlay"></div>
         </div>
         <nav id="main-menu">
             <partial name="_NavMenu" />

@@ -1,8 +1,8 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 @screen-width-larger: 800px;
-
 @standard-gutter: 12px;
+@header-height: 90px;
 
 // Palette
 @colour1: #1D7151; // Dark green
@@ -82,7 +82,7 @@ details summary {
 }
 
 #header {
-    height: 90px;
+    height: @header-height;
     padding: 8px @standard-gutter;
     border-bottom: 1px solid @colour1;
     background-color: @colour1;
@@ -113,24 +113,72 @@ nav h2,
     color: white;
 }
 
-#burger-wrapper {
-    float: right;
+/* Burger menu */
+#burger-trigger {
     height: 100%;
     padding: 17px 0;
-}
+    position: relative;
+    float: right;
 
-#burger-input {
-    display: none;
-}
+    #burger-icon {
+        width: 50px;
+        height: 100%;
+        display: inline-block;
 
-#burger-menu {
-    width: 50px;
-    height: 100%;
-    background: linear-gradient( to bottom, white, white 20%, @colour1 20%, @colour1 40%, white 40%, white 60%, @colour1 60%, @colour1 80%, white 80%, white 100% );
-    display: inline-block;
+        #burger-lines,
+        #burger-lines:before,
+        #burger-lines:after {
+            width: 100%;
+            transition: 0.3s;
+            background: white;
+            position: absolute;
+            left: 0;
+            display: block;
+        }
 
-    li {
-        margin-bottom: 0.5em;
+        #burger-lines {
+            height: 5px;
+            margin-top: -2px;
+            top: 50%;
+        }
+
+        #burger-lines:before,
+        #burger-lines:after {
+            height: 100%;
+            content: '';
+            transform-origin: 1rem center;
+        }
+
+        #burger-lines:before {
+            top: 12px;
+        }
+
+        #burger-lines:after {
+            top: -12px;
+        }
+
+        // Close icon
+        &.close {
+            transform: scale3d(0.8, 0.8, 0.8);
+
+            #burger-lines {
+                background: transparent;
+            }
+
+            #burger-lines:before,
+            #burger-lines:after {
+                top: 0;
+                transform-origin: 50% 50%;
+            }
+
+            #burger-lines:before {
+                transform: rotate3d(0, 0, 1, 45deg);
+            }
+
+            #burger-lines:after {
+                transform: rotate3d(0, 0, 1, -45deg);
+            }
+        }
     }
 }
 
@@ -144,32 +192,33 @@ nav h2,
     border-right: 1px solid @colour2;
     background-color: @colour1;
     transition: 0.3s;
+    z-index: 1;
     visibility: hidden;
 }
 
-.overlay {
+#overlay {
     position: fixed;
-    top: 0;
+    top: @header-height;
     left: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
     transition: opacity .35s, visibility .35s, height .35s;
     background-color: @colour1;
-    z-index: -1;
     visibility: hidden;
 }
 
-#burger-input:checked + #burger-menu #sidebar-menu {
+#burger-trigger.close + #sidebar-menu {
     left: 0;
     visibility: visible;
 }
 
-#burger-input:checked ~ .overlay {
+#burger-trigger.close ~ #overlay {
     opacity: 0.4;
     visibility: visible;
 }
 
+/* Main menu */
 #main-menu {
     border-bottom: 1px solid @colour1;
     background: transparent url(../images/cutlery.png) no-repeat left center;
@@ -212,12 +261,10 @@ nav h2,
     float: right;
     height: 100%;
 }
-
 /* Rich text section */
 #text-wrapper img {
     object-fit: contain;
 }
-
 /* Collapsible section */
 .standard-section {
     margin: 0 0 24px 24px;
@@ -233,7 +280,6 @@ nav h2,
         }
     }
 }
-
 /* Map page */
 #map-page-body .image-map {
     margin-top: 10px;
@@ -284,7 +330,6 @@ nav h2,
         }
     }
 }
-
 /* Search page */
 #search-by-type {
     margin-top: 24px;
@@ -307,7 +352,6 @@ a.search-trigger {
     background-color: @colour6;
     display: block;
 }
-
 /* Food listing page */
 .food-card {
     margin-bottom: @standard-gutter;
@@ -315,7 +359,6 @@ a.search-trigger {
     border-radius: 15px;
     background-color: @colour6;
 }
-
 /* About page */
 .team-member {
     margin: 48px 0;
@@ -343,10 +386,9 @@ a.search-trigger {
         display: block;
     }
 
-    #burger-menu {
+    #burger-trigger {
         display: none;
     }
-
     /* Map page */
     #map-page-body .image-map {
         margin-top: 0;
@@ -364,7 +406,6 @@ a.search-trigger {
             width: 54%;
         }
     }
-
     /* Search page */
     #search-content {
         display: flex;
@@ -378,7 +419,6 @@ a.search-trigger {
     #search-by-type {
         margin-top: 0;
     }
-
     /* Food listing page */
     #food-cards {
         display: flex;
@@ -388,7 +428,6 @@ a.search-trigger {
             flex: 50%;
         }
     }
-
     /* About page */
     .team-member p {
         padding: 0 5vw;
