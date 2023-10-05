@@ -60,6 +60,11 @@ a {
     }
 }
 
+details summary {
+    list-style-type: revert;
+    cursor: pointer;
+}
+
 #wrapper {
     max-width: 1024px;
     margin: 0 auto;
@@ -195,7 +200,7 @@ nav h2,
     height: 56px;
     padding: 8px @standard-gutter;
     border-top: 1px solid @colour1;
-    background-color: @colour3;
+    background-color: @colour4;
 }
 
 #footer-image {
@@ -205,22 +210,20 @@ nav h2,
 
 /* Collapsible section */
 .standard-section {
-    margin-bottom: 24px;
-}
+    margin: 0 0 24px 24px;
 
-.collapse-section-header {
-    cursor: pointer;
+    details {
+        summary {
+            padding-bottom: 4px;
+            border-bottom: 1px solid @colour5;
+        }
 
-    &:not(.card-header) {
-        padding-bottom: 4px;
-        border-bottom: 1px solid @colour5;
+        .standard-section-text {
+            margin-top: 6px;
+        }
     }
 }
 
-.collapse-section-body {
-    overflow: hidden;
-    display: none;
-}
 /* Map page */
 #map-page-body .image-map {
     margin-top: 10px;
@@ -239,7 +242,7 @@ nav h2,
     display: block;
     margin-top: 10px;
     padding: 20px;
-    counter-reset: outlet-counter;    
+    counter-reset: outlet-counter;
     background-color: @text-colour-main;
 
     li {
@@ -301,18 +304,10 @@ a.search-trigger {
 
 /* Food listing page */
 .food-card {
-    margin-bottom: 10px;
-    padding: 10px;
+    margin-bottom: @standard-gutter;
+    padding: @standard-gutter @standard-gutter @standard-gutter 36px;
     border-radius: 15px;
     background-color: @colour6;
-}
-
-h3.card-header {
-    margin-bottom: 0;
-}
-
-.card-body {
-    margin-top: 0.4em;
 }
 
 /* About page */
@@ -361,7 +356,7 @@ h3.card-header {
         float: right;
         width: 54%;
     }
-    
+
     /* Search page */
     #search-content {
         display: flex;
@@ -375,9 +370,9 @@ h3.card-header {
     #search-by-type {
         margin-top: 0;
     }
-    
+
     /* About page */
-    .team-member p { 
+    .team-member p {
         padding: 0 5vw;
     }
 }

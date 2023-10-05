@@ -11,9 +11,13 @@
 {
     var textSection = (TextSection)blockItem.Content;
     <div class="standard-section">
-        <h3 class="collapse-section-header">@textSection.Heading</h3>
-        <div class="collapse-section-body">
-            @textSection.Text
-        </div>
+        <details>
+            <summary>
+                <h3>@textSection.Heading</h3>
+            </summary>
+            <div class="standard-section-text">
+                @textSection.Text
+            </div>
+        </details>
     </div>
 }

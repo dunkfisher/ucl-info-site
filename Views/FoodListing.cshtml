@@ -7,14 +7,16 @@
 @foreach (var foodGrouping in Model.GroupedListings)
 {	
 	<div class="food-card">
-		<h3 class="card-header collapse-section-header">@foodGrouping.Key</h3>
-		<div class="card-body collapse-section-body">
+		<details>
+			<summary>
+				<h3>@foodGrouping.Key</h3>
+			</summary>
 			@foreach (var food in foodGrouping.Value)
 			{
 				if (!string.IsNullOrEmpty(food.Url))
 				{
 					<a href="@food.Url" target="_blank">@food.Name</a>
-					
+
 				}
 				else
 				{
@@ -22,6 +24,6 @@
 				}
 				<br />
 			}
-		</div>		
+		</details>	
 	</div>
 }
