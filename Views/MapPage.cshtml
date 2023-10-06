@@ -4,6 +4,10 @@
     Layout = "Master.cshtml";
 }
 
+@section PageTitle {
+    @Model.Name
+}
+
 <div id="map-page-body" class="clearfix">
     <h1>@Model.Heading</h1>
     

@@ -9,6 +9,10 @@
     var outlets = outletRoot.Children<Outlet>();
 }
 
+@section PageTitle {
+    @Model.Name
+}
+
 <h1>@Model.Heading</h1>
 <div id="text-wrapper">@Model.MainText</div>
 
