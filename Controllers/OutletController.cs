@@ -26,6 +26,7 @@ namespace Upf_Info_Site
             var foodListingVm = new FoodListingViewModel(CurrentPage, new PublishedValueFallback(_serviceContext, _variationContextAccessor));
 			foodListingVm.Heading = CurrentPage?.Name ?? string.Empty;
             var currentPage = (Outlet)CurrentPage;
+            foodListingVm.AdditionalText = currentPage.MainText;
             foreach (var blockItem in currentPage.ProductList)
             {
                 var foodList = new List<Food>();

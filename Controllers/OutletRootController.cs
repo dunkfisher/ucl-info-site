@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Services;
+using Umbraco.Cms.Core.Strings;
 using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Web.Common;
 using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Cms.Web.Common.PublishedModels;
 using Upf_Info_Site.Models;
@@ -25,10 +27,18 @@ namespace Upf_Info_Site
         public sealed override IActionResult Index() => throw new NotImplementedException();
 
         public IActionResult Index(string foodType)
-        {
-            var foodListingVm = new FoodListingViewModel(CurrentPage, new PublishedValueFallback(_serviceContext, _variationContextAccessor), foodType);
+        {            
             var outletRoot = (OutletRoot)CurrentPage;
-            var outlets = outletRoot.Children<Outlet>();
+            var outlets = outletRoot.Children<Outlet>();  
+            
+            var productTypeRoot = outletRoot.Siblings<ProductTypeRoot>()
+                .SingleOrDefault();
+            var additionalText = GetAdditionalTextFor(productTypeRoot, foodType);
+            
+            var foodListingVm = new FoodListingViewModel(CurrentPage, new PublishedValueFallback(_serviceContext, 
+                _variationContextAccessor), foodType, additionalText);            
+
+            // Find all products of food type across the outlets.
             foreach(var outlet in outlets)
             {
                 var matchFound = false;
@@ -55,6 +65,18 @@ namespace Upf_Info_Site
                 }
             }
             return View("FoodListing", foodListingVm);
+        }
+
+        private IHtmlEncodedString GetAdditionalTextFor(ProductTypeRoot ptRoot, string foodType)
+        {
+            if (ptRoot == null)
+            {
+                return null;
+            }
+
+            var productType = ptRoot.Children<ProductType>()
+                .SingleOrDefault(x => x.Name.Equals(foodType, StringComparison.CurrentCultureIgnoreCase));
+            return productType?.AdditionalInfo ?? null;
         }
     }
 }
