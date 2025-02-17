@@ -220,18 +220,41 @@ nav h2,
 
 /* Main menu */
 #main-menu {
+    display: none;
     border-bottom: 1px solid @colour1;
     background: transparent url(../images/cutlery.png) no-repeat left center;
     background-size: 50px;
-    display: none;
+    position: relative;
 
-    ul {
+    > ul {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
 
-        li {
+        > li {
             padding: 0 10px;
+            /* Sub menu */
+            ul {
+                height: 0;
+                min-width: 200px;
+                overflow: hidden;
+                padding: 0 10px;
+                border-width: 0;
+                background-color: white;                
+                position: absolute;
+                top: 50px;
+                transition: height 0.3s ease-in;
+                display: block;
+
+                li {
+                    padding: 2px 0;
+                }
+            }
+
+            &:hover {
+                ul {
+                }
+            }
         }
     }
 
@@ -243,6 +266,20 @@ nav h2,
             color: @colour3;
         }
     }
+}
+
+#main-menu > ul > li:hover ul ul,
+#main-menu > ul > li > a:hover ul ul {
+    height: 0;
+}
+
+#main-menu > ul > li:hover ul,
+#main-menu > ul > li > a:hover ul,
+#main-menu ul ul li:hover > ul,
+#main-menu ul ul li a:hover > ul {
+    height: 500px;
+    border: 1px solid @text-colour-main;
+    border-top: 0;
 }
 
 #content {

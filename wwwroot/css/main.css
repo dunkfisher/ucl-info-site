@@ -3,14 +3,14 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8V1s.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLDz8V1s.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrFJA.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrFJA.ttf) format('truetype');
 }
 body {
   min-height: 100vh;
@@ -182,18 +182,35 @@ nav h2,
 }
 /* Main menu */
 #main-menu {
+  display: none;
   border-bottom: 1px solid #1D7151;
   background: transparent url(../images/cutlery.png) no-repeat left center;
   background-size: 50px;
-  display: none;
+  position: relative;
 }
-#main-menu ul {
+#main-menu > ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-#main-menu ul li {
+#main-menu > ul > li {
   padding: 0 10px;
+  /* Sub menu */
+}
+#main-menu > ul > li ul {
+  height: 0;
+  min-width: 200px;
+  overflow: hidden;
+  padding: 0 10px;
+  border-width: 0;
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  transition: height 0.3s ease-in;
+  display: block;
+}
+#main-menu > ul > li ul li {
+  padding: 2px 0;
 }
 #main-menu a {
   font-size: 1em;
@@ -201,6 +218,18 @@ nav h2,
 }
 #main-menu a:hover {
   color: #FFCC3F;
+}
+#main-menu > ul > li:hover ul ul,
+#main-menu > ul > li > a:hover ul ul {
+  height: 0;
+}
+#main-menu > ul > li:hover ul,
+#main-menu > ul > li > a:hover ul,
+#main-menu ul ul li:hover > ul,
+#main-menu ul ul li a:hover > ul {
+  height: 500px;
+  border: 1px solid #1B2A4D;
+  border-top: 0;
 }
 #content {
   min-height: 50vh;

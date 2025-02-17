@@ -53,7 +53,7 @@
         </div>
         <div id="footer">
             @{
-                var homePage = Umbraco.ContentAtRoot().FirstOrDefault() as HomePage;            
+                var homePage = Umbraco.ContentAtRoot().SingleOrDefault() as HomePage;            
                 if (homePage != null && homePage.FooterImage != null)
                 {
                     <a id="footer-image" href="@homePage.FooterImageUrl" target="_blank">
