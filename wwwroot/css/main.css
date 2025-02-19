@@ -207,20 +207,20 @@ nav h2,
   display: block;
   padding: 12px 0;
 }
-#main-menu > ul > li ul {
+#main-menu > ul > li .sub-menu-wrapper {
   position: absolute;
-  top: 49px;
-  box-sizing: border-box;
+  top: 50px;
   max-height: 0;
   overflow: hidden;
+  background-color: white;
+  transition: max-height 0.3s ease-out;
+}
+#main-menu > ul > li .sub-menu-wrapper ul {
   padding: 0 10px;
   border: 1px solid #1D7151;
   border-top: 0;
-  background-color: white;
-  transition: max-height 0.3s ease-out;
-  display: block;
 }
-#main-menu > ul > li ul li {
+#main-menu > ul > li .sub-menu-wrapper ul li {
   padding: 2px 0;
 }
 #main-menu a {
@@ -230,11 +230,8 @@ nav h2,
 #main-menu a:hover {
   color: #FFCC3F;
 }
-#main-menu > ul > li:hover ul,
-#main-menu > ul > li > a:hover ul,
-#main-menu ul ul li:hover > ul,
-#main-menu ul ul li a:hover > ul {
-  top: 50px;
+#main-menu > ul > li:hover .sub-menu-wrapper,
+#main-menu > ul > li > a:hover .sub-menu-wrapper {
   max-height: 800px;
   transition: max-height 0.3s ease-in;
 }

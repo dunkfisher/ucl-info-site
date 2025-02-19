@@ -12,14 +12,16 @@
             <a href="@item.Url()">@item.Name()</a>
             @if (item.Children().Any())
             {
-                <ul>
-                    @foreach (var childItem in item.Children().Where(x => x.IsVisible()))
-                    {
-                        <li>
-                            <a href="@childItem.Url()">@childItem.Name()</a>
-                        </li>
-                    }
-                </ul>
+                <div class="sub-menu-wrapper">
+                    <ul>
+                        @foreach (var childItem in item.Children().Where(x => x.IsVisible()))
+                        {
+                            <li>
+                                <a href="@childItem.Url()">@childItem.Name()</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
             }
         </li>
     }
