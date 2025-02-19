@@ -161,6 +161,9 @@ nav h2,
   z-index: 1;
   visibility: hidden;
 }
+#sidebar-menu ul ul {
+  display: none;
+}
 #overlay {
   position: fixed;
   top: 90px;
@@ -183,30 +186,38 @@ nav h2,
 /* Main menu */
 #main-menu {
   display: none;
+  position: relative;
+  height: 50px;
+  padding: 0 12px;
   border-bottom: 1px solid #1D7151;
   background: transparent url(../images/cutlery.png) no-repeat left center;
   background-size: 50px;
-  position: relative;
 }
 #main-menu > ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  height: 100%;
 }
 #main-menu > ul > li {
   padding: 0 10px;
   /* Sub menu */
 }
+#main-menu > ul > li > a {
+  display: block;
+  padding: 12px 0;
+}
 #main-menu > ul > li ul {
-  height: 0;
-  min-width: 200px;
+  position: absolute;
+  top: 49px;
+  box-sizing: border-box;
+  max-height: 0;
   overflow: hidden;
   padding: 0 10px;
-  border-width: 0;
+  border: 1px solid #1D7151;
+  border-top: 0;
   background-color: white;
-  position: absolute;
-  top: 50px;
-  transition: height 0.3s ease-in;
+  transition: max-height 0.3s ease-out;
   display: block;
 }
 #main-menu > ul > li ul li {
@@ -219,17 +230,13 @@ nav h2,
 #main-menu a:hover {
   color: #FFCC3F;
 }
-#main-menu > ul > li:hover ul ul,
-#main-menu > ul > li > a:hover ul ul {
-  height: 0;
-}
 #main-menu > ul > li:hover ul,
 #main-menu > ul > li > a:hover ul,
 #main-menu ul ul li:hover > ul,
 #main-menu ul ul li a:hover > ul {
-  height: 500px;
-  border: 1px solid #1B2A4D;
-  border-top: 0;
+  top: 50px;
+  max-height: 800px;
+  transition: max-height 0.3s ease-in;
 }
 #content {
   min-height: 50vh;
