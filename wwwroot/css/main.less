@@ -18,6 +18,10 @@ body {
     font-family: 'Poppins', sans-serif;
     color: @text-colour-main;
     background-color: @colour6;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
 }
 
 h1 {
@@ -187,6 +191,7 @@ nav h2,
     left: -80vw;
     width: 80vw;
     height: 100%;
+    overflow: auto;
     padding: 10px;
     border-right: 1px solid @colour2;
     background-color: @colour1;
@@ -211,7 +216,7 @@ nav h2,
 
             + .sub-menu-wrapper {
                 display: block;
-                max-height: 2000px;
+                max-height: 5000px;
                 transition: max-height 0.3s ease-in;
             }
         }
@@ -318,7 +323,7 @@ nav h2,
 
 #main-menu > ul > li:hover .sub-menu-wrapper,
 #main-menu > ul > li > a:hover .sub-menu-wrapper {
-    max-height: 2000px;
+    max-height: 5000px;
     transition: max-height 0.3s ease-in;
 }
 

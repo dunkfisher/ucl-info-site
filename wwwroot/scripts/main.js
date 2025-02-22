@@ -3,6 +3,7 @@ $(function () {
     $("#burger-trigger").on("click", function () {
         $(this).toggleClass("close");
         $("#burger-icon").toggleClass("close");
+        $("body").toggleClass("no-scroll");
     });
 
     $(".sub-menu-toggle").on("click", function () {

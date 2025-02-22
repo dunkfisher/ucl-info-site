@@ -18,6 +18,9 @@ body {
   color: #1B2A4D;
   background-color: #E9EAEC;
 }
+body.no-scroll {
+  overflow: hidden;
+}
 h1 {
   font-size: 1.6em;
   font-weight: bold;
@@ -154,6 +157,7 @@ nav h2,
   left: -80vw;
   width: 80vw;
   height: 100%;
+  overflow: auto;
   padding: 10px;
   border-right: 1px solid #96CEB4;
   background-color: #1D7151;
@@ -178,7 +182,7 @@ nav h2,
 }
 #sidebar-menu .sub-menu-toggle.open + .sub-menu-wrapper {
   display: block;
-  max-height: 2000px;
+  max-height: 5000px;
   transition: max-height 0.3s ease-in;
 }
 #sidebar-menu ul .sub-menu-wrapper {
@@ -266,7 +270,7 @@ nav h2,
 }
 #main-menu > ul > li:hover .sub-menu-wrapper,
 #main-menu > ul > li > a:hover .sub-menu-wrapper {
-  max-height: 2000px;
+  max-height: 5000px;
   transition: max-height 0.3s ease-in;
 }
 #content {
