@@ -161,8 +161,38 @@ nav h2,
   z-index: 1;
   visibility: hidden;
 }
-#sidebar-menu ul ul {
-  display: none;
+#sidebar-menu .sub-menu-toggle {
+  display: inline-block;
+  float: right;
+  transform: rotate(45deg);
+  margin: 3px 5px 0 0;
+  height: 14px;
+  width: 14px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  color: white;
+}
+#sidebar-menu .sub-menu-toggle.open {
+  transform: rotate(-135deg);
+  margin-top: 10px;
+}
+#sidebar-menu .sub-menu-toggle.open + .sub-menu-wrapper {
+  display: block;
+  max-height: 800px;
+  transition: max-height 0.3s ease-in;
+}
+#sidebar-menu ul .sub-menu-wrapper {
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+  background-color: #74C1E0;
+}
+#sidebar-menu ul .sub-menu-wrapper li {
+  padding: 1px 0 1px 12px;
+  border-bottom: 1px dashed #1D7151;
+}
+#sidebar-menu ul .sub-menu-wrapper li:last-child {
+  border-bottom: none;
 }
 #overlay {
   position: fixed;
@@ -216,12 +246,16 @@ nav h2,
   transition: max-height 0.3s ease-out;
 }
 #main-menu > ul > li .sub-menu-wrapper ul {
-  padding: 0 10px;
+  padding: 0 12px;
   border: 1px solid #1D7151;
   border-top: 0;
 }
 #main-menu > ul > li .sub-menu-wrapper ul li {
-  padding: 2px 0;
+  padding: 6px 0;
+  border-bottom: 1px dashed #96CEB4;
+}
+#main-menu > ul > li .sub-menu-wrapper ul li:last-child {
+  border-bottom: none;
 }
 #main-menu a {
   font-size: 1em;
@@ -358,6 +392,9 @@ a.search-trigger {
     display: block;
   }
   #burger-trigger {
+    display: none;
+  }
+  .sub-menu-toggle {
     display: none;
   }
   /* Map page */

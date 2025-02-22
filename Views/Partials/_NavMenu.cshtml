@@ -9,9 +9,10 @@
     @foreach (var item in selection)
     {
         <li>
-            <a href="@item.Url()">@item.Name()</a>
+            <a href="@item.Url()">@item.Name()</a>            
             @if (item.Children().Any())
             {
+                <span class="sub-menu-toggle"></span>
                 <div class="sub-menu-wrapper">
                     <ul>
                         @foreach (var childItem in item.Children().Where(x => x.IsVisible()))

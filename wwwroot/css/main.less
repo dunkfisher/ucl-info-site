@@ -194,8 +194,43 @@ nav h2,
     z-index: 1;
     visibility: hidden;
 
-    ul ul {
-        display: none;
+    .sub-menu-toggle {
+        display: inline-block;
+        float: right;
+        transform: rotate(45deg);
+        margin: 3px 5px 0 0;
+        height: 14px;
+        width: 14px;
+        border-right: 2px solid;
+        border-bottom: 2px solid;
+        color: white;
+
+        &.open {
+            transform: rotate(-135deg);
+            margin-top: 10px;
+
+            + .sub-menu-wrapper {
+                display: block;
+                max-height: 800px;
+                transition: max-height 0.3s ease-in;
+            }
+        }
+    }
+
+    ul .sub-menu-wrapper {        
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
+        overflow: hidden;
+        background-color: @colour4;
+
+        li {
+            padding: 1px 0 1px @standard-gutter;
+            border-bottom: 1px dashed @colour1;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
     }
 }
 
@@ -254,12 +289,17 @@ nav h2,
                 transition: max-height 0.3s ease-out;
 
                 ul {
-                    padding: 0 10px;
+                    padding: 0 @standard-gutter;
                     border: 1px solid @colour1;
                     border-top: 0;
 
                     li {
-                        padding: 2px 0;
+                        padding: 6px 0;
+                        border-bottom: 1px dashed @colour2;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
                     }
                 }
             }
@@ -424,6 +464,10 @@ a.search-trigger {
     }
 
     #burger-trigger {
+        display: none;
+    }
+
+    .sub-menu-toggle {
         display: none;
     }
     /* Map page */

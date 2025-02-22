@@ -5,6 +5,10 @@ $(function () {
         $("#burger-icon").toggleClass("close");
     });
 
+    $(".sub-menu-toggle").on("click", function () {
+        $(this).toggleClass("open");
+    });
+
     // Collapsible sections
     $(".collapse-section-header").on("click", function() {        
         var sectionBody = $(this).next(".collapse-section-body");   
