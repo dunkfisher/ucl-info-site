@@ -178,7 +178,7 @@ nav h2,
 }
 #sidebar-menu .sub-menu-toggle.open + .sub-menu-wrapper {
   display: block;
-  max-height: 800px;
+  max-height: 2000px;
   transition: max-height 0.3s ease-in;
 }
 #sidebar-menu ul .sub-menu-wrapper {
@@ -266,7 +266,7 @@ nav h2,
 }
 #main-menu > ul > li:hover .sub-menu-wrapper,
 #main-menu > ul > li > a:hover .sub-menu-wrapper {
-  max-height: 800px;
+  max-height: 2000px;
   transition: max-height 0.3s ease-in;
 }
 #content {
