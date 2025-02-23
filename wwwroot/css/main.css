@@ -288,6 +288,9 @@ nav h2,
   height: 100%;
 }
 /* Rich text section */
+#text-wrapper {
+  word-wrap: break-word;
+}
 #text-wrapper img {
   object-fit: contain;
 }
